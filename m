@@ -1,48 +1,108 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днём Рождения! | Catwar</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Можно подключить какой-нибудь милый шрифт с Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <!-- Шапка с градиентом -->
-        <header class="blog-header">
-            <h1>🎂 Пусть этот день будет вкусным! 🎂</h1>
-            <div class="shrimp-emoji">🍤🍤🍤</div>
-        </header>
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <!-- Основное содержимое блога -->
-        <main class="blog-content">
-            <section class="intro">
-                <p>Дорогой друг! В этот особенный день я желаю тебе самого светлого, тёплого и радостного, как этот градиент от фиолетового к оранжевому! Пусть в твоей жизни будет много уюта, мурлыкающих моментов и... конечно же, <strong>вкусных креветок</strong>! 🍤</p>
-            </section>
+body {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* Вот он, магический градиент на весь экран */
+    background: linear-gradient(135deg, #8A2BE2, #DA70D6, #FFA500, #FFD700);
+    background-size: 400% 400%;
+    /* Анимация плавного перелива цветов */
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            <section class="wishes">
-                <h2>Мои пожелания для тебя:</h2>
-                <ul>
-                    <li>Чтобы каждый день был насыщен яркими красками, даже если за окном дождь.</li>
-                    <li>Чтобы на жизненном пути встречались только честные и верные друзья.</li>
-                    <li>Чтобы все цели достигались так же легко, как креветка исчезает с тарелки! 😼</li>
-                    <li>Бесконечного вдохновения для новых постов и артов!</li>
-                    <li>И пусть твой личный "миска" всегда будет полной!</li>
-                </ul>
-            </section>
+/* Анимация для градиента */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-            <section class="catwar-mention">
-                <p>Я очень рад, что наша странная и прекрасная платформа <strong>Catwar</strong> свела нас! Спасибо за твоё присутствие здесь.</p>
-                <p>Отмечай свой день так, как ты того заслуживаешь — с размахом! Лови виртуальный торт! 🍰</p>
-            </section>
-        </main>
+.container {
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для читаемости */
+    margin: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 
-        <!-- Подвал -->
-        <footer class="blog-footer">
-            <p>С любовью и пожеланиями самых сочных креветок, <br>Твой друг с Catwar. ❤️</p>
-        </footer>
-    </div>
-</body>
-</html>
+/* Стили для шапки */
+.blog-header h1 {
+    color: #6A0DAD; /* Фиолетовый */
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.shrimp-emoji {
+    font-size: 2em;
+    margin: 10px 0;
+    animation: bounce 2s infinite;
+}
+
+/* Лёгкая анимация креветок */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Стили для основного контента */
+.blog-content {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.blog-content section {
+    margin-bottom: 25px;
+}
+
+.intro {
+    font-size: 1.1em;
+}
+
+.wishes h2 {
+    color: #FF8C00; /* Тёмно-оранжевый */
+    margin-bottom: 10px;
+}
+
+.wishes ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.wishes li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.wishes li::before {
+    content: '🐾';
+    position: absolute;
+    left: 0;
+}
+
+.catwar-mention {
+    background-color: rgba(255, 215, 0, 0.1); /* Лёгкий жёлтый фон */
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #FFD700; /* Жёлтая полоска */
+}
+
+/* Стили для подвала */
+.blog-footer {
+    border-top: 2px dashed #DA70D6; /* Фиолетовый пунктир */
+    padding-top: 20px;
+    font-style: italic;
+    color: #555;
+}
